@@ -10,17 +10,17 @@ const POKEAPI_URL =
  *  -id: Number
  *  -name: String
  *  -type: String
- *  -baseExp: Number
+ *  -base_experience: Number
  */
 
-function Pokecard({ id, name, type, baseExp }) {
+function Pokecard({ id, name, type, base_experience }) {
   const imgSrc = `${POKEAPI_URL}/${id}.png`;
   return (
     <div className="Pokecard">
       <div>{name}</div>
       <img src={imgSrc} />
       <div>Type: {type}</div>
-      <div>EXP: {baseExp}</div>
+      <div>EXP: {base_experience}</div>
     </div>
   );
 }
