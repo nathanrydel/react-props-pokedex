@@ -12,28 +12,30 @@ import "./Pokedex.css"
 
 // TODO: destructure id, name, type, base_experience from pokemon
 
-function Pokedex({ pokemons, isWinner }) {
+function Pokedex({ pokemons, exp, isWinner }) {
   const winnerMessage = isWinner ? <p>THIS HAND WINS!</p> : null
 
   return (
     <div className="Pokedex">
-      <h1>Pokedex</h1>
 
-      <div className="Pokecard-container">
-        {pokemons.map(pokemon =>
-          (<Pokecard
-            key={pokemon.id}
-            id={pokemon.id}
-            name={pokemon.name}
-            type={pokemon.type}
-            base_experience={pokemon.base_experience}
-          />))
-        }
+      <h2 className="Pokedex-title">Pokedex</h2>
+      <div className="Pokedex-cards">
+        {pokemons.map(p => (
+            <Pokecard
+                id={p.id}
+                name={p.name}
+                type={p.type}
+                exp={p.base_experience}
+            />
+        ))}
       </div>
 
-      { winnerMessage }
+      <h4>Total experience: {exp}</h4>
+      {winnerMessage}
+
     </div>
-  );
+);
 }
+
 
 export default Pokedex;
