@@ -2,9 +2,11 @@ import React from 'react';
 import Pokecard from './Pokecard';
 
 function Pokedex(pokemons) {
+  console.log("*** POKEMONS:", pokemons)
   return (
     <div className="Pokedex">
       <h1>Pokedex</h1>
+
       <div className="Pokecard-container">
         {pokemons.map(pokemon =>
         (<Pokecard
