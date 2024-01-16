@@ -1,6 +1,6 @@
 import React from 'react';
 import Pokecard from './Pokecard';
-import "./Pokedex.css"
+import "./Pokedex.css";
 
 /** Returns a Pokedex component
  * with Pokecard from pokemons array as prop:
@@ -13,7 +13,7 @@ import "./Pokedex.css"
 // TODO: destructure id, name, type, base_experience from pokemon
 
 function Pokedex({ pokemons, exp, isWinner }) {
-  const winnerMessage = isWinner ? <p>THIS HAND WINS!</p> : null
+  const winnerMessage = isWinner ? <p>THIS HAND WINS!</p> : null;
 
   return (
     <div className="Pokedex">
@@ -21,12 +21,12 @@ function Pokedex({ pokemons, exp, isWinner }) {
       <h2 className="Pokedex-title">Pokedex</h2>
       <div className="Pokedex-cards">
         {pokemons.map(p => (
-            <Pokecard
-                id={p.id}
-                name={p.name}
-                type={p.type}
-                exp={p.base_experience}
-            />
+          <Pokecard
+            id={p.id}
+            name={p.name}
+            type={p.type}
+            base_experience={p.base_experience}
+          />
         ))}
       </div>
 
@@ -34,7 +34,7 @@ function Pokedex({ pokemons, exp, isWinner }) {
       {winnerMessage}
 
     </div>
-);
+  );
 }
 
 
