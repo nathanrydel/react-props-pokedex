@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "./Pokecard.css";
 
 const POKEAPI_URL =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
@@ -18,10 +18,12 @@ function Pokecard({ id, name, type, base_experience }) {
   // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon//7.png
   return (
     <div className="Pokecard">
-      <div>{name}</div>
-      <img src={imgSrc} alt={ name } />
-      <div>Type: {type}</div>
-      <div>EXP: {base_experience}</div>
+      <div className="Pokecard-name">{name}</div>
+      <img src={imgSrc} alt={name} />
+      <div className="Pokecard-stats">
+        <div>Type: {type}</div>
+        <div>EXP: {base_experience}</div>
+      </div>
     </div>
   );
 }
