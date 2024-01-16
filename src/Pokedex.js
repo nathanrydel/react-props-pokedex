@@ -1,20 +1,30 @@
 import React from 'react';
 import Pokecard from './Pokecard';
 
-function Pokedex(pokemons) {
-  console.log("*** POKEMONS:", pokemons)
+/** Returns a Pokedex component
+ * with Pokecard from pokemons array as prop:
+ *
+ * Prop:
+ * -pokemons: Array
+ *
+ */
+
+// TODO: destructure id, name, type, base_experience from pokemon
+
+function Pokedex({ pokemons }) {
   return (
     <div className="Pokedex">
       <h1>Pokedex</h1>
 
       <div className="Pokecard-container">
         {pokemons.map(pokemon =>
-        (<Pokecard
-          id={pokemon.id}
-          name={pokemon.name}
-          type={pokemon.type}
-          baseExp={pokemon.base_experience}
-        />))}
+          (<Pokecard
+            id={pokemon.id}
+            name={pokemon.name}
+            type={pokemon.type}
+            base_experience={pokemon.base_experience}
+          />))
+        }
       </div>
     </div>
   );

@@ -12,6 +12,8 @@ const POKEMONS = [
   {id: 133, name: 'Eevee',      type: 'normal',   base_experience: 65}
 ];
 
+/** Main app component for app */
+
 function App() {
   return (
     <Pokedex pokemons = { POKEMONS } />
