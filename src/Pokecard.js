@@ -15,7 +15,7 @@ const POKEAPI_URL =
 
 function Pokecard({ id, name, type, base_experience }) {
   const imgSrc = `${POKEAPI_URL}${id}.png`;
-  // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon//7.png
+
   return (
     <div className="Pokecard">
       <div className="Pokecard-name">{name}</div>
