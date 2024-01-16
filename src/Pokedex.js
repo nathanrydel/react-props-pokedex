@@ -19,6 +19,7 @@ function Pokedex({ pokemons }) {
       <div className="Pokecard-container">
         {pokemons.map(pokemon =>
           (<Pokecard
+            key={pokemon.id}
             id={pokemon.id}
             name={pokemon.name}
             type={pokemon.type}
