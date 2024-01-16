@@ -12,10 +12,8 @@ const POKEMONS = [
   {id: 133, name: 'Eevee',      type: 'normal',   base_experience: 65}
 ];
 
-//TODO: anytime we are shuffling, we should in big letters in the docstring
-// that we are mutating what we are passed
 
-/** Shuffles items (array) returns shuffled items array */
+/** Shuffles items: (array) IN PLACE and returns MUTATED items array */
 
 function shuffle(items) {
   for (let i = items.length - 1; i > 0; i--) {
@@ -24,6 +22,12 @@ function shuffle(items) {
   }
   return items;
 }
+
+/**
+ * Calculate the sum of experience in a hand
+ * @param {Array} hand - a deck of Pokecards
+ * @returns {Number} - The sum of the base_experience of Pokecards array
+ */
 
 function calcExpTotal(hand){
   return hand.reduce((total, pokemon) => total + pokemon.base_experience)
@@ -36,20 +40,18 @@ function calcExpTotal(hand){
 */
 
 function Pokegame({ pokemons=POKEMONS }) {
-  console.log("*** POKEMONS", POKEMONS)
-  const shuffledPokemons = shuffle(POKEMONS);
-  console.log("*** SHUFFLED POKEMONS", shuffledPokemons);
+  const shuffledPokemons = shuffle(pokemons);
 
-  const handOne = shuffledPokemons.slice(0,4);
-  const handOneExp = calcExpTotal(handOne);
+  const hand1 = shuffledPokemons.slice(0,4);
+  const exp1 = calcExpTotal(hand1);
 
-  const handTwo = shuffledPokemons.slice(4);
-  const handTwoExp = calcExpTotal(handTwo);
+  const hand2 = shuffledPokemons.slice(4);
+  const exp2 = calcExpTotal(hand2);
 
   return(
     <div>
-      <Pokedex pokemons={handOne} isWinner={handOneExp > handTwoExp} />
-      <Pokedex pokemons={handTwo} isWinner={handTwoExp > handOneExp}/>
+      <Pokedex pokemons={hand1} exp={exp1} isWinner={exp1 > exp2} />
+      <Pokedex pokemons={hand2} exp={exp2} isWinner={exp2 > exp1}/>
     </div>
   )
 }
