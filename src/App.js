@@ -4,7 +4,11 @@ import Pokegame from "./Pokegame";
 /** Main app component for app */
 
 function App() {
-  return (<Pokegame />);
+  return (
+    <div className="App">
+      <Pokegame />;
+    </div>
+  );
 }
 
 export default App;
