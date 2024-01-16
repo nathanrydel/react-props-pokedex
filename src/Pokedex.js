@@ -1,5 +1,6 @@
 import React from 'react';
 import Pokecard from './Pokecard';
+import "./Pokedex.css"
 
 /** Returns a Pokedex component
  * with Pokecard from pokemons array as prop:
