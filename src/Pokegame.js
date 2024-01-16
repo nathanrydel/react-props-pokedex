@@ -30,7 +30,7 @@ function shuffle(items) {
  */
 
 function calcExpTotal(hand){
-  return hand.reduce((total, pokemon) => total + pokemon.base_experience)
+  return hand.reduce((total, pokemon) => total + pokemon.base_experience, 0)
 }
 
 /** Shows two hands of pokedexes
